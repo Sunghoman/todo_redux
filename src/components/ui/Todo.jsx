@@ -1,20 +1,18 @@
 import styled from "styled-components";
 import ToggleBtn from "../button/toggle.styled";
 
-const Todo = () => {
+const Todo = ({ title, body, isDone }) => {
   return(
     <TodoItem>
-
       <div className="todoHeader">
-        <h3 className="todoTitle">제목임</h3>
+        <h3 className="todoTitle">{ title }</h3>
         <h3 className="todoDelete">X</h3>
       </div>
 
       <div className="todoContent">
-        <p>내용임</p>
-        <ToggleBtn>완료</ToggleBtn>
+        <p>{ body }</p>
+        <ToggleBtn>{ isDone ? "취소" : "완료" }</ToggleBtn>
       </div>
-
     </TodoItem>
   )
 }
