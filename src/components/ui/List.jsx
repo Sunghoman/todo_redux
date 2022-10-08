@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 const List = () => {
 
   let posts = useSelector((state) => state.todo.todos)
-  // console.log(posts)
+  console.log(posts)
 
   const workingFilter = posts.filter((todo) => { return todo.isDone === false }).map((todo) => {
     return( <Todo key={todo.id} title={todo.title} body={todo.body} isDone={todo.isDone} />)

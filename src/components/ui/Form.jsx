@@ -2,7 +2,13 @@ import styled from "styled-components";
 import STInput from "../input/input.style";
 import FormBtn from "../button/submit.styled";
 
+import { useDispatch } from "react-redux"
+import { addPost } from "../../redux/todos/todos";
+
 const Form = () => {
+
+  const dispatch = useDispatch();
+
   return(
       <TodoForm>
         <div className="material_input">      
@@ -24,7 +30,11 @@ const Form = () => {
           <span className="bar"></span>
           <label>Content</label>
         </div>
-        <FormBtn>버튼임</FormBtn>
+        <FormBtn
+          onClick={() => {
+            dispatch(addPost());
+          }}
+        >버튼임</FormBtn>
       </TodoForm>
   )
 }
