@@ -13,6 +13,9 @@
  ┃ ┗ 📜Todo.jsx
  📦pages
  ┗ 📜TodoList.jsx
+ 
+ ![image](https://user-images.githubusercontent.com/97009400/194715479-2062395e-b8ca-4c73-a0bc-2e1bd04b64e8.png)
+
 
  button, input은 따로 만들어주었음다
 
