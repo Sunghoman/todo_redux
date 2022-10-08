@@ -11,15 +11,11 @@ const STInput = styled.input`
   border-radius: 0px;
   color: aliceblue;
   outline:none;
-  &:focus ~ label {
+  &:focus ~ label, 
+  &:valid ~ label {
     font-size:14px;
     color:tomato;
     top:-20px;
   }
-  /* &:valid ~ label {
-    font-size:14px;
-    color:tomato;
-    top:-20px;
-  } */
 `
 export default STInput

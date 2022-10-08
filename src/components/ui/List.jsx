@@ -5,14 +5,13 @@ import { useSelector } from "react-redux";
 
 const List = () => {
 
-  let posts = useSelector((state) => state.todo.todos)
-  console.log(posts)
+  const todos = useSelector(state => state.reducer.todos);
 
-  const workingFilter = posts.filter((todo) => { return todo.isDone === false }).map((todo) => {
+  const workingFilter = todos.filter((todo) => { return todo.isDone === false }).map((todo) => {
     return( <Todo key={todo.id} title={todo.title} body={todo.body} isDone={todo.isDone} />)
   })
 
-  const doneFilter = posts.filter((todo) => { return todo.isDone === true }).map((todo) => {
+  const doneFilter = todos.filter((todo) => { return todo.isDone === true }).map((todo) => {
     return( <Todo key={todo.id} title={todo.title} body={todo.body} isDone={todo.isDone} />)
   })
 

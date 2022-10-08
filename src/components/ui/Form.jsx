@@ -2,20 +2,58 @@ import styled from "styled-components";
 import STInput from "../input/input.style";
 import FormBtn from "../button/submit.styled";
 
-import { useDispatch } from "react-redux"
-import { addPost } from "../../redux/todos/todos";
+import { addTodo } from "../../redux/modules/todos";
+import { useDispatch } from "react-redux";
+import { useState, useRef } from "react";
 
 const Form = () => {
 
   const dispatch = useDispatch();
+  // const todos = useSelector(state => state.reducer.todos);
+  // console.log(todos)
+  const nextId = useRef(4)
+  // console.log(nextId)
+
+    // input 두 개 한 번에 state로 만듦
+    const [inputs, setInputs] = useState({
+      title: '',
+      body: '',
+    });
+  
+    const { title, body } = inputs;
+  
+    // input에 입력된 값 처리
+    const onChange = (e) => {
+      const { name, value } = e.target;
+      setInputs({
+        ...inputs,
+        [name]: value // e.target.name: e.target.value 이거랑 똑같은거임
+      })
+    }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (title && body) {
+      dispatch(addTodo({
+        id: nextId.current,
+        title,
+        body,
+        isDone: false
+      }));
+      nextId.current ++
+      console.log(nextId)
+    }
+  }
 
   return(
-      <TodoForm>
+      <TodoForm onSubmit={onSubmit}>
         <div className="material_input">      
           <STInput
             type="text"
+            defaultValue={title}
             autoComplete="off"
-            name="title"
+            name='title'
+            onChange={onChange}
           />
           <span className="bar"></span>
           <label>Title</label>
@@ -24,15 +62,16 @@ const Form = () => {
         <div className="material_input">      
           <STInput
             type="text"
+            defaultValue={body}
             autoComplete="off"
-            name="body"
+            name='body'
+            onChange={onChange}
           />
           <span className="bar"></span>
           <label>Content</label>
         </div>
         <FormBtn
           onClick={() => {
-            dispatch(addPost());
           }}
         >버튼임</FormBtn>
       </TodoForm>
