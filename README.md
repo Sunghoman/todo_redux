@@ -1,18 +1,4 @@
 폴더 구조
-
-📦components
- ┣ 📂button
- ┃ ┣ 📜submit.styled.js
- ┃ ┗ 📜toggle.styled.js
- ┣ 📂input
- ┃ ┗ 📜input.style.js
- ┗ 📂ui
- ┃ ┣ 📜Form.jsx
- ┃ ┣ 📜Header.jsx
- ┃ ┣ 📜List.jsx
- ┃ ┗ 📜Todo.jsx
- 📦pages
- ┗ 📜TodoList.jsx
  
  ![image](https://user-images.githubusercontent.com/97009400/194715479-2062395e-b8ca-4c73-a0bc-2e1bd04b64e8.png)
 
