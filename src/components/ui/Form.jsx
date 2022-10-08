@@ -9,41 +9,43 @@ import { useState, useRef } from "react";
 const Form = () => {
 
   const dispatch = useDispatch();
-  // const todos = useSelector(state => state.reducer.todos);
-  // console.log(todos)
-  const nextId = useRef(4)
-  // console.log(nextId)
 
-    // input 두 개 한 번에 state로 만듦
-    const [inputs, setInputs] = useState({
-      title: '',
-      body: '',
-    });
-  
-    const { title, body } = inputs;
-  
-    // input에 입력된 값 처리
-    const onChange = (e) => {
-      const { name, value } = e.target;
-      setInputs({
-        ...inputs,
-        [name]: value // e.target.name: e.target.value 이거랑 똑같은거임
-      })
-    }
+  // id값인데, 객체로 비교해줄거임
+  const nextId = useRef(0)
+
+  // input 두 개 한 번에 state로 만듦
+  const [inputs, setInputs] = useState({
+    title: '',
+    body: '',
+  });
+
+  const { title, body } = inputs;
+  // inputs에 입력된 값 처리
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value // e.target.name: e.target.value 이거랑 똑같은거임
+    })
+  }
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (title && body) {
       dispatch(addTodo({
-        id: nextId.current,
+        id: nextId.current++,
         title,
         body,
         isDone: false
       }));
-      nextId.current ++
       console.log(nextId)
     }
+    // setInputs({
+    //   title: '',
+    //   body: ''
+    // })
   }
+
 
   return(
       <TodoForm onSubmit={onSubmit}>
@@ -70,10 +72,7 @@ const Form = () => {
           <span className="bar"></span>
           <label>Content</label>
         </div>
-        <FormBtn
-          onClick={() => {
-          }}
-        >버튼임</FormBtn>
+        <FormBtn>버튼임</FormBtn>
       </TodoForm>
   )
 }

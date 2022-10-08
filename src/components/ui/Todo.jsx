@@ -1,24 +1,34 @@
 import styled from "styled-components";
 import ToggleBtn from "../button/toggle.styled";
 
+import { useDispatch } from "react-redux";
 
-const Todo = ({ title, body, isDone }) => {
+import { toggleTodo, deleteTodo } from "../../redux/modules/todos";
+
+
+const Todo = ({ todo, i }) => {
+
+  const dispatch = useDispatch();
+  const onToggle = (id) => dispatch(toggleTodo(id));
+  const onDelete = (id) => dispatch(deleteTodo(id));
 
   return(
     <TodoItem>
       <div className="todoHeader">
-        <h3 className="todoTitle">{ title }</h3>
+        <h3 className="todoTitle">{ todo.title }</h3>
         <h3 
           className="todoDelete"
           onClick={() => {
+            onDelete(todo.id);
           }}
         >X</h3>
       </div>
 
       <div className="todoContent">
-        <p>{ body }</p>
+        <p>{ todo.body }</p>
         <ToggleBtn onClick={() => {
-        }}>{ isDone ? "취소" : "완료" }</ToggleBtn>
+          onToggle(todo.id)
+        }}>{ todo.isDone ? "취소" : "완료" }</ToggleBtn>
       </div>
     </TodoItem>
   )

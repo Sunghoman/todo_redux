@@ -8,11 +8,11 @@ const List = () => {
   const todos = useSelector(state => state.reducer.todos);
 
   const workingFilter = todos.filter((todo) => { return todo.isDone === false }).map((todo) => {
-    return( <Todo key={todo.id} title={todo.title} body={todo.body} isDone={todo.isDone} />)
+    return( <Todo key={todo.id} todo={todo} />)
   })
 
   const doneFilter = todos.filter((todo) => { return todo.isDone === true }).map((todo) => {
-    return( <Todo key={todo.id} title={todo.title} body={todo.body} isDone={todo.isDone} />)
+    return( <Todo key={todo.id} todo={todo} />)
   })
 
   return(
