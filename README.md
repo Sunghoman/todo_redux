@@ -1,4 +1,5 @@
 폴더 구조
+
 📦components
  ┣ 📂button
  ┃ ┣ 📜submit.styled.js
