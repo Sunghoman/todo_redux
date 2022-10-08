@@ -11,7 +11,7 @@ const Form = () => {
   const dispatch = useDispatch();
 
   // id값인데, 객체로 비교해줄거임
-  const nextId = useRef(0)
+  const nextId = useRef(2)
 
   // input 두 개 한 번에 state로 만듦
   const [inputs, setInputs] = useState({
@@ -33,12 +33,13 @@ const Form = () => {
     e.preventDefault();
     if (title && body) {
       dispatch(addTodo({
-        id: nextId.current++,
+        id: nextId.current,
         title,
         body,
         isDone: false
       }));
       console.log(nextId)
+      nextId.current ++
     }
     // setInputs({
     //   title: '',

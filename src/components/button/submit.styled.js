@@ -4,8 +4,8 @@ const FormBtn = styled.button`
   width: 8rem;
   height: 4rem;
   outline: none;
+  box-sizing: border-box;
   border: none;
-  border-radius: 5px;
   background-color: tomato;
   color: whitesmoke;
   cursor: pointer;

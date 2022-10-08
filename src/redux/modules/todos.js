@@ -24,7 +24,14 @@ export const deleteTodo = (id) => ({
 
 // 초기 상태값 (state)
 const initialState = {
-  todos: []
+  todos: [
+    {
+      id: 1,
+      title: "내가 만든 쿠키",
+      body: "너를 위해 구웠지",
+      isDone: false
+    }
+  ]
 }
 // 리듀서 (변화를 일으키는 함수) (setState)
 const reducer = ( state = initialState, action ) => {
