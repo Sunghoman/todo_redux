@@ -12,21 +12,17 @@ const TodoItem = () => {
   const status = todos.isDone;
 
   return(
-    <Detail>
-      <div className="idNumber" isDone={status}>id: {todos.id}</div>
-        <button
-          onClick={() => {navigate("/")}}
-        >메인으로</button>
-        <div class="card active" id="overview">
-          <div class="card-content">
-            <div class="row">
-              <div class="left col">
-                <h1>{todos.title}</h1>
-                <h3>{todos.body}</h3>
-              </div>
-            </div>
-          </div>
+    <Detail onClick={() => {navigate("/")}}>
+      <div className="content" isDone={status}>
+        <div className="front">
+          <h4>id: {todos.id}</h4>
+          <h1>{todos.title}</h1>
+          <h3>{todos.body}</h3>
         </div>
+        <div className="back">
+          <h2>메인으로</h2>
+        </div>
+      </div>
     </Detail>
   )
 }
@@ -34,86 +30,45 @@ const TodoItem = () => {
 export default TodoItem;
 
 const Detail = styled.div`
-  box-sizing: border-box;
-  display: flex;
-	background-color: #eaeaea;
-  font-weight: 300;
-	line-height: 1.8;
-  margin: 0 auto;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,.1), 3px 5px 20px rgba(0,0,0,.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 500px;
-	height: 400px;
-	position: relative;
-	display: flex;
-	align-items: flex-end;
-	padding: 30px;
-  & .idNumber {
-    position: absolute;
-    top: 30px;
-    left: 50px;
-    z-index: 6;
-    color: rgba(0,0,0,0.7);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 16px;
-    font-weight: 900;
-    padding: 5px 15px;
-    border-radius: 20px;
-    background: rgba(0,0,0,.1);
-    line-height: 1;
-    text-shadow: 0 1px 0px rgba(255,255,255,.1);
+  height: 500px;
+  margin: -250px;
+  float: left;
+  perspective: 500px;
+  .content {
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    transition: transform 2s;
+    transform-style: preserve-3d;
   }
-  .card{
-		display: inline-block;
-		margin-right: 20px;
-	}
-	.card-content{
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
-		transition: -webkit-clip-path 1s ease;
-		padding: 100px 0 0;
-		overflow: hidden;
-		border-radius: 5px;
-		.row{
-			display: table;
-			width: 100%;
-			height: 100%;
-		}
-		.col{
-			width: 50%;
-			height: 100%;
-			display: table-cell;
-			transition: .3s ease .3s;
-			transform: translate3d(0,0,0);
-			vertical-align: top;
-			h1{
-				font-weight: 500;
-				font-size: 3em;
-				line-height: 1;
-				margin: 0 0 30px;
-				strong{
-					font-weight: 700;
-					display: block;
-				}
-			}
-			&.left{
-				transform: translate3d(0,0, 0);
-				opacity: 0;
-				padding-left: 50px;
-			}
-		}
-	}
-	.card.active .col{
-		transform: translate3d(0,0,0);
-		opacity: 1;
-	}
-  & button {
+  &:hover .content {
+    transform: rotateY( 180deg );
+    transition: transform 1s;
+  }
+  .front,
+  .back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    line-height: 100px;
+    color: #03446A;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 5px;
+    backface-visibility: hidden;
+  }
+  .back {
+    background: tomato;
+    font-size: 40px;
+    color: white;
+    transform: rotateY( 180deg );
     cursor: pointer;
-    z-index: 999;
+    line-height: 400px;
   }
 `
