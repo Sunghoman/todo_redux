@@ -11,7 +11,7 @@ const Form = () => {
   const dispatch = useDispatch();
 
   // id값인데, 객체로 비교해줄거임
-  const nextId = useRef(2)
+  const nextId = useRef(2);
 
   // input 두 개 한 번에 state로 만듦
   const [inputs, setInputs] = useState({
@@ -31,6 +31,7 @@ const Form = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    nextId.current += 1
     if (title && body) {
       dispatch(addTodo({
         id: nextId.current,
@@ -39,8 +40,8 @@ const Form = () => {
         isDone: false
       }));
       console.log(nextId)
-      nextId.current ++
     }
+    
     // setInputs({
     //   title: '',
     //   body: ''
@@ -55,7 +56,9 @@ const Form = () => {
             type="text"
             defaultValue={title}
             autoComplete="off"
+            maxLength="15"
             name='title'
+            placeholder="15자 까지 입력허ㅏ쎄요"
             onChange={onChange}
           />
           <span className="bar"></span>
@@ -67,6 +70,8 @@ const Form = () => {
             type="text"
             defaultValue={body}
             autoComplete="off"
+            maxLength='40'
+            placeholder="40자 까지 입력허ㅏ쎄요"
             name='body'
             onChange={onChange}
           />

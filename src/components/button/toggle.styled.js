@@ -17,11 +17,6 @@ const ToggleBtn = styled.button`
   transition: all 0.3s;
   &:hover {
     transform: scale(0.9);
-    animation: pulse 1s;
-    box-shadow: 0 0 0 2em transparent;
-  }
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 var(--hover); }
   }
 `
 export default ToggleBtn;

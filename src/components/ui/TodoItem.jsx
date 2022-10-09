@@ -2,28 +2,43 @@ import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 
 import styled from "styled-components";
+import ToggleBtn from "../button/toggle.styled";
+
+
+import { useDispatch } from "react-redux";
+import { toggleTodo } from "../../redux/modules/todos";
 
 const TodoItem = () => {
 
   const { id } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const todoList = useSelector((state) => state.reducer.todos);
   const todos = todoList.find(data => data.id === Number(id));
-  const status = todos.isDone;
+
+  const onToggle = (id) => dispatch(toggleTodo(id));
 
   return(
-    <Detail onClick={() => {navigate("/")}}>
-      <div className="content" isDone={status}>
-        <div className="front">
-          <h4>id: {todos.id}</h4>
-          <h1>{todos.title}</h1>
-          <h3>{todos.body}</h3>
+    <div>
+      <Detail onClick={() => {navigate("/")}}>
+        <div className="content">
+          <div className="front">
+            <h4>id: {todos.id}</h4>
+            <h1>{todos.title}</h1>
+            <h3>{todos.body}</h3>
+          </div>
+          <div className="back">
+            <h2>메인으로</h2>
+          </div>
         </div>
-        <div className="back">
-          <h2>메인으로</h2>
-        </div>
-      </div>
-    </Detail>
+        <hr/>
+        <br/>
+        {/* <ToggleBtn 
+          onClick={() => {
+            onToggle(todoList.id)
+        }}><span>{ todoList.isDone ? "취소" : "완료" }</span></ToggleBtn> */}
+      </Detail>
+    </div>
   )
 }
 

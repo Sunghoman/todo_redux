@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { toggleTodo, deleteTodo } from "../../redux/modules/todos";
 
 import { useNavigate } from "react-router-dom";
+import SeeMore from "../button/seeMore.styled";
 
 const Todo = ({ todo, i }) => {
 
@@ -17,7 +18,6 @@ const Todo = ({ todo, i }) => {
   return(
     <TodoItem>
       <div className="todoHeader">
-        <button onClick={() => {navigate("/detail/"+ todo.id)}}>더 보기</button>
         <h3 className="todoTitle">{ todo.title }</h3>
         <h3 
           className="todoDelete"
@@ -28,6 +28,7 @@ const Todo = ({ todo, i }) => {
       </div>
 
       <div className="todoContent">
+      <SeeMore onClick={() => {navigate("/detail/"+ todo.id)}}>더 보기</SeeMore>
         <p>{ todo.body }</p>
         <ToggleBtn 
           onClick={() => {
@@ -45,9 +46,9 @@ const TodoItem = styled.div`
   height: 15rem;
   margin: 0px 0px 50px 0px;
   transition: all 0.5s ease;
-  cursor: pointer;
   &:hover {
-    transform: translateY(-3%)
+    transform: translateY(-1.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, .2);
   }
   & .todoHeader {
     display: flex;
