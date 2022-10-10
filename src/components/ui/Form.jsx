@@ -4,7 +4,7 @@ import FormBtn from "../button/submit.styled";
 
 import { addTodo } from "../../redux/modules/todos";
 import { useDispatch } from "react-redux";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import uuid from 'react-uuid'
 
 

@@ -4,7 +4,7 @@ const Marquee = styled.div`
   overflow: hidden;
   div {
     position: relative;
-    animation: CSSright linear 18s infinite;
+    animation: Marquee linear 18s infinite;
     &:hover {
       animation-play-state: paused;
     }
@@ -14,7 +14,7 @@ const Marquee = styled.div`
     user-select:none
   }
 
-  @keyframes CSSright {
+  @keyframes Marquee {
     0% { right: -100% }
     100% { right: 100% }
   }
