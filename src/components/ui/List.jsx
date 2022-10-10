@@ -17,14 +17,14 @@ const List = () => {
 
   return(
     <div>
-      <StatusTitle>Working Task</StatusTitle>
+      <StatusTitle>Working Task : {workingFilter.length} </StatusTitle> 
       <STList>
         { workingFilter }
       </STList>
 
       <hr/>
       
-      <StatusTitle>Completed Task</StatusTitle>
+      <StatusTitle>Completed Task : { doneFilter.length } </StatusTitle>
       <STList>
         { doneFilter }
       </STList>
