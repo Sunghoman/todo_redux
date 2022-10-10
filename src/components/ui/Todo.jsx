@@ -46,6 +46,10 @@ const TodoItem = styled.div`
   height: 15rem;
   margin: 0px 0px 50px 0px;
   transition: all 0.5s ease;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
   &:hover {
     transform: translateY(-1.5%);
     box-shadow: 0 4rem 8rem rgba(0, 0, 0, .2);
