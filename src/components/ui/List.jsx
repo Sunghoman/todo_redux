@@ -24,7 +24,7 @@ const List = () => {
 
       <hr/>
       
-      <StatusTitle>Completed Task : { doneFilter.length } </StatusTitle>
+      <StatusTitle>Completed Task : {doneFilter.length}</StatusTitle>
       <STList>
         { doneFilter }
       </STList>
