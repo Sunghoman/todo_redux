@@ -5,12 +5,15 @@ const Header = () => {
   return (
     <HeaderBox>
       <h1>TODO</h1>
-      <div className="tag"> An easy way to manage your work.</div>
+      <div className="tag"> 항해99 리액트 숙련주차 과제.</div>
       <hr/>
       {/* <marquee width="100%" direction="left">
         <span>TodoList 입니다. 근데 이제 Redux를 곁들인</span>
       </marquee> */}
-      <Marquee><div>TodoList 입니다. 근데 이제 Redux를 곁들인</div></Marquee>
+      <Marquee>
+        <div>TodoList 입니다. 근데 이제 Redux를 곁들인</div>
+        <div>여기에 마우스 올려보삼</div>
+      </Marquee>
     </HeaderBox>
   )
 }

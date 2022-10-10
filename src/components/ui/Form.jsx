@@ -65,7 +65,7 @@ const Form = () => {
             autoComplete="off"
             maxLength="15"
             name='title'
-            placeholder="15자 까지 입력허ㅏ쎄요"
+            placeholder="제목을 입력하세요"
             onChange={onChange}
           />
           <span className="bar"></span>
@@ -78,7 +78,7 @@ const Form = () => {
             value={body}
             autoComplete="off"
             maxLength='40'
-            placeholder="40자 까지 입력허ㅏ쎄요"
+            placeholder="내용을 입력하세요"
             name='body'
             onChange={onChange}
           />
