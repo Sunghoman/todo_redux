@@ -1,7 +1,9 @@
+import Header from "../components/ui/Header.jsx";
+
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 
-import ToggleBtn from "../button/toggle.styled";
+import ToggleBtn from "../components/button/toggle.styled";
 import styled from "styled-components";
 
 const TodoItem = () => {
@@ -14,6 +16,7 @@ const TodoItem = () => {
 
   return(
     <div>
+      <Header/>
       <Detail onClick={() => {navigate("/")}}>
         <div className="content">
           <div className="front">

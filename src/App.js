@@ -1,6 +1,6 @@
 import './App.css';
 import TodoList from './pages/TodoList';
-import TodoItem from './components/ui/TodoItem';
+import TodoItem from './pages/TodoItem';
 
 import { Route, Routes } from 'react-router-dom';
 
