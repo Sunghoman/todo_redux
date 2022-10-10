@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Marquee from "../styled/marquee.styled";
 
 const Header = () => {
   return (
@@ -6,9 +7,10 @@ const Header = () => {
       <h1>TODO</h1>
       <div className="tag"> An easy way to manage your work.</div>
       <hr/>
-      <marquee width="100%" direction="left">
+      {/* <marquee width="100%" direction="left">
         <span>TodoList 입니다. 근데 이제 Redux를 곁들인</span>
-      </marquee>
+      </marquee> */}
+      <Marquee><div>TodoList 입니다. 근데 이제 Redux를 곁들인</div></Marquee>
     </HeaderBox>
   )
 }

@@ -32,7 +32,7 @@ const Form = () => {
 
   // id값인데, 객체로 비교해줄거임
   // JSON.stringify??
-  const nextId = useRef(2);
+  // const nextId = useRef(2);
   const onSubmit = (e) => {
     e.preventDefault(); //
     if (title && body) {
@@ -43,7 +43,7 @@ const Form = () => {
         isDone: false
       }));
     }
-    console.log(nextId)
+    // console.log(nextId)
     setInputs({
       title: '',
       body: ''

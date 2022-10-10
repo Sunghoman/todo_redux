@@ -38,11 +38,11 @@ const reducer = ( state = initialState, action ) => {
       };
     
     case TOGGLE_TODO:
-      const toggleState = { ...state, todos: state.todos.map(todo => todo.id === action.id ? { ...todo, isDone: !todo.isDone } : todo) }
+      const toggleState = { ...state, todos: state.todos.map((todo) => todo.id === action.id ? { ...todo, isDone: !todo.isDone } : todo) }
       return toggleState;
 
     case DELETE_TODO:
-      const deleteTodo = { ...state, todos: state.todos.filter(todo => todo.id !== action.id) }
+      const deleteTodo = { ...state, todos: state.todos.filter((todo) => todo.id !== action.id) }
       return deleteTodo
 
     default:
