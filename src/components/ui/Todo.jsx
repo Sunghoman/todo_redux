@@ -28,7 +28,7 @@ const Todo = ({ todo, i }) => {
       </div>
 
       <div className="todoContent">
-      <SeeMore onClick={() => {navigate("/detail/"+ todo.id)}}>더 보기</SeeMore>
+      <SeeMore onClick={ () => { navigate("/detail/"+ todo.id) } }>더 보기</SeeMore>
         <p>{ todo.body }</p>
         <ToggleBtn 
           onClick={() => {

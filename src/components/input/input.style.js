@@ -11,8 +11,7 @@ const STInput = styled.input`
   border-radius: 0px;
   color: aliceblue;
   outline:none;
-  &:focus ~ label, 
-  &:valid ~ label {
+  &:focus ~ label, &:valid ~ label {
     font-size:14px;
     color:tomato;
     top:-20px;

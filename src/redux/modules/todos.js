@@ -7,7 +7,8 @@ const DELETE_TODO = "DELETE_TODO";
 
 // Action Creator
 export const addTodo = (payload) => {
-  return { type: ADD_TODO, payload }; // 리듀서한테 어떤 정보를 같이 보내려면 payload를 이용함
+  // const nextId = useRef(2)
+  return { type: ADD_TODO, payload };
 };
 
 // Action Creator
@@ -25,12 +26,6 @@ export const deleteTodo = (id) => ({
 // 초기 상태값 (state)
 const initialState = {
   todos: [
-    {
-      id: 1,
-      title: "내가 만든 쿠키",
-      body: "너를 위해 구웠지",
-      isDone: false
-    }
   ]
 }
 // 리듀서 (변화를 일으키는 함수) (setState)

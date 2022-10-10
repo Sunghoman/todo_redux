@@ -1,22 +1,16 @@
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 
-import styled from "styled-components";
 import ToggleBtn from "../button/toggle.styled";
-
-
-import { useDispatch } from "react-redux";
-import { toggleTodo } from "../../redux/modules/todos";
+import styled from "styled-components";
 
 const TodoItem = () => {
 
   const { id } = useParams();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const todoList = useSelector((state) => state.reducer.todos);
-  const todos = todoList.find(data => data.id === Number(id));
+  const todos = todoList.find(data => data.id === id);
 
-  const onToggle = (id) => dispatch(toggleTodo(id));
 
   return(
     <div>
@@ -33,10 +27,7 @@ const TodoItem = () => {
         </div>
         <hr/>
         <br/>
-        {/* <ToggleBtn 
-          onClick={() => {
-            onToggle(todoList.id)
-        }}><span>{ todoList.isDone ? "취소" : "완료" }</span></ToggleBtn> */}
+        <ToggleBtn><span>{ todos.isDone ? "Completed Task!" : "Working Task!" }</span></ToggleBtn>
       </Detail>
     </div>
   )
