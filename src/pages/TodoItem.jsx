@@ -13,16 +13,15 @@ const TodoItem = () => {
   const todoList = useSelector((state) => state.reducer.todos);
   const todos = todoList.find(data => data.id === id);
 
-
   return(
     <div>
       <Header/>
       <Detail onClick={() => {navigate("/")}}>
         <div className="content">
           <div className="front">
-            <h4>id: {todos.id}</h4>
-            <h1>{todos.title}</h1>
-            <h3>{todos.body}</h3>
+            <h4>id: { todos.id }</h4>
+            <h1>{ todos.title }</h1>
+            <h3>{ todos.body }</h3>
           </div>
           <div className="back">
             <h2>메인으로</h2>

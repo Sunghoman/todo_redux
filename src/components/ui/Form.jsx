@@ -17,8 +17,8 @@ const Form = () => {
     title: '',
     body: '',
   });
-
   const { title, body } = inputs;
+
   // inputs에 입력된 값 처리
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -28,11 +28,6 @@ const Form = () => {
     })
   }
 
-  // const onCreate = (title, content) => dispatch(addTodo(title, content));
-
-  // id값인데, 객체로 비교해줄거임
-  // JSON.stringify??
-  // const nextId = useRef(2);
   const onSubmit = (e) => {
     e.preventDefault(); //
     if (title && body) {
@@ -43,18 +38,11 @@ const Form = () => {
         isDone: false
       }));
     }
-    // console.log(nextId)
     setInputs({
       title: '',
       body: ''
     })
   }
-// 이 코드 문제 있음. router로 다른 페이지 갔다오면, nextId(ref)값이 내가 초기에 설정한 값으로 다시 돌아와버림
-// 페이지 이동만 안하면, 문제 없는디...
-// redux module에서 더해주어야 할까?
-// useRef는 리렌더링 안되니까 id값이 잘 들어가는데,
-// 상세페이지로 이동하고 나면, 렌더링이 되니까 초기값으로 돌아오는 듯.
-// 근디 리덕스 모듈에서 useRef 못쓰는디....(컴포넌트, 커스텀훅에서만 사용 가능하대여)
 
   return(
       <TodoForm onSubmit={onSubmit}>

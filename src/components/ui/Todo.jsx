@@ -23,12 +23,15 @@ const Todo = ({ todo }) => {
           className="todoDelete"
           onClick={() => {
             onDelete(todo.id);
+            localStorage.removeItem(todo.id)
           }}
         >X</h3>
       </div>
 
       <div className="todoContent">
-      <SeeMore onClick={ () => { navigate("/detail/"+ todo.id) } }>더 보기</SeeMore>
+      <SeeMore onClick={ () => { 
+        navigate("/detail/"+ todo.id) 
+      }}>더 보기</SeeMore>
         <p>{ todo.body }</p>
         <ToggleBtn 
           onClick={() => {

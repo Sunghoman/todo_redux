@@ -2,7 +2,7 @@ import './App.css';
 import TodoList from './pages/TodoList';
 import TodoItem from './pages/TodoItem';
 
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 
 function App() {
   return (

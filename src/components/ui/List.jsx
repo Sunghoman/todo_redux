@@ -6,8 +6,7 @@ import { useSelector } from "react-redux";
 const List = () => {
 
   const todos = useSelector(state => state.reducer.todos);
-  console.log(todos);
-
+  // console.log(todos)
 
   const workingFilter = todos.filter((todo) => { return todo.isDone === false }).map((todo, i) => {
     return( 
