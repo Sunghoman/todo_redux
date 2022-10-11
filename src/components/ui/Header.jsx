@@ -22,7 +22,6 @@ const Header = () => {
       {/* 공식문서에서도 쓰지 말라고 함 */}
       <Marquee>
         <div>항해99 리액트 숙련주차 과제.</div>
-        <div>마우스 올리면 멈춤</div>
       </Marquee>
     </HeaderBox>
   )

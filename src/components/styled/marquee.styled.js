@@ -4,7 +4,7 @@ const Marquee = styled.div`
   overflow: hidden;
   div {
     position: relative;
-    animation: Marquee linear 18s infinite;
+    animation: Marquee linear 20s infinite;
     &:hover {
       animation-play-state: paused;
     }
