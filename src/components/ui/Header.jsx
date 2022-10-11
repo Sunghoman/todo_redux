@@ -41,10 +41,10 @@ const HeaderBox = styled.header`
     margin: 0;
   }
   & .tag {
-      padding: 0;
-      color: #3A539B;
-      font-weight: bold;
-      font-size: .7em;
-      margin: 0 auto;
-    }
+    padding: 0;
+    color: #3A539B;
+    font-weight: bold;
+    font-size: .7em;
+    margin: 0 auto;
+  }
 `

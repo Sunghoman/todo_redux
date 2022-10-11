@@ -55,13 +55,11 @@ const WorkingList = styled.div`
 `
 const DoneList = styled.div`
   float: right;
-  margin-right: 4em;
+  margin-right: 10em;
 `
 
 const STList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  position: absolute;
 `
 
 const StatusTitle = styled.h2`
