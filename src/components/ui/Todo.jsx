@@ -44,7 +44,8 @@ const Todo = ({ todo }) => {
 
 export default Todo;
 
-const TodoItem = styled.div`
+const TodoItem = styled.li`
+  list-style: none;
   width: 20rem;
   height: 15rem;
   margin: 0px 0px 50px 0px;
@@ -53,10 +54,9 @@ const TodoItem = styled.div`
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select:none;
-  user-select:none
+  user-select:none;
   &:hover {
-    transform: translateY(-1.5%);
-    box-shadow: 0 4rem 8rem rgba(0, 0, 0, .2);
+    transform: translateY(-3%);
   }
   & .todoHeader {
     display: flex;

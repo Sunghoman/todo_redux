@@ -8,7 +8,9 @@ const DELETE_TODO = "DELETE_TODO";
 // Action Creator
 export const addTodo = (payload) => {
   // const nextId = useRef(2)
-  return { type: ADD_TODO, payload };
+  return { 
+    type: ADD_TODO, payload 
+  };
 };
 
 // Action Creator
