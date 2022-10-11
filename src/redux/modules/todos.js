@@ -25,12 +25,14 @@ export const deleteTodo = (id) => ({
 
 // 초기 상태값 (state)
 const initialState = {
-  todos: [
-  ]
+  todos: [],
 }
+
 // 리듀서 (변화를 일으키는 함수) (setState)
 const reducer = ( state = initialState, action ) => {
+
   switch (action.type) {
+
     case ADD_TODO:
       return {
         ...state,
@@ -48,6 +50,25 @@ const reducer = ( state = initialState, action ) => {
     default:
       return state;
   }
+
 };
 
 export default reducer
+
+// switch문 이렇게 적어도 잘 돌아감 (진짜임)
+// const reducer = ( state = initialState, action ) => {
+//   if (action.type === ADD_TODO) {
+//     return {
+//       ...state,
+//       todos: [...state.todos, action.payload],
+//     };
+//   } else if (action.type === TOGGLE_TODO) {
+//     const toggleState = { ...state, todos: state.todos.map((todo) => todo.id === action.id ? { ...todo, isDone: !todo.isDone } : todo) }
+//     return toggleState;
+//   } else if (action.type === DELETE_TODO) {
+//     const deleteTodo = { ...state, todos: state.todos.filter((todo) => todo.id !== action.id) }
+//     return deleteTodo
+//   } else {
+//     return state;
+//   }
+// }

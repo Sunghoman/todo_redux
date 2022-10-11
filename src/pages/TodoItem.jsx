@@ -48,7 +48,6 @@ const Detail = styled.div`
   float: left;
   perspective: 500px;
   .content {
-    /* position: absolute; */
     width: 100%;
     height: 100%;
     box-shadow: 0 0 15px rgba(0,0,0,0.1);

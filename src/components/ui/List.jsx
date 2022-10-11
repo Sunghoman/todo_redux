@@ -6,25 +6,36 @@ import { useSelector } from "react-redux";
 const List = () => {
 
   const todos = useSelector(state => state.reducer.todos);
+  console.log(todos);
 
-  const workingFilter = todos.filter((todo) => { return todo.isDone === false }).map((todo) => {
-    return( <Todo key={todo.id} todo={todo} />)
+
+  const workingFilter = todos.filter((todo) => { return todo.isDone === false }).map((todo, i) => {
+    return( 
+      <Todo 
+        key={todo.id} 
+        todo={todo} 
+      />
+    )
   })
 
-  const doneFilter = todos.filter((todo) => { return todo.isDone === true }).map((todo) => {
-    return( <Todo key={todo.id} todo={todo} />)
+  const doneFilter = todos.filter((todo) => { return todo.isDone === true }).map((todo, i) => {
+    return( 
+      <Todo
+        key={todo.id} 
+        todo={todo} 
+      />)
   })
 
   return(
     <div>
-      <StatusTitle>Working Task : {workingFilter.length} </StatusTitle> 
+      <StatusTitle>{ workingFilter.length } 개의 할 일이 남았어요!</StatusTitle> 
       <STList>
         { workingFilter }
       </STList>
 
       <hr/>
-      
-      <StatusTitle>Completed Task : {doneFilter.length}</StatusTitle>
+
+      <StatusTitle>{ doneFilter.length } 개를 완료했어요!</StatusTitle>
       <STList>
         { doneFilter }
       </STList>

@@ -2,17 +2,27 @@ import styled from "styled-components";
 import Marquee from "../styled/marquee.styled";
 
 const Header = () => {
+
+  function getDay() {
+    //yyyy-mm-dd 포맷 날짜 생성
+    var day = new Date();
+    return day.getFullYear() + ". " 
+    + ((day.getMonth() + 1) > 9 ? (day.getMonth() + 1).toString() : "0" + (day.getMonth() + 1)) 
+    + ". " + (day.getDate() > 9 ? day.getDate().toString() : "0" + day.getDate().toString())
+  }
+
   return (
     <HeaderBox>
-      <h1>TODO</h1>
-      <div className="tag"> 항해99 리액트 숙련주차 과제.</div>
+      <h1>SungHo's TODO LIST.</h1>
+      <div className="tag"> { getDay() } </div>
       <hr/>
       {/* <marquee width="100%" direction="left">
-        <span>TodoList 입니다. 근데 이제 Redux를 곁들인</span>
       </marquee> */}
+      {/* 이거 크롬에선 잘 되는데 다른 브라우저에서는 좀 끊김 */}
+      {/* 공식문서에서도 쓰지 말라고 함 */}
       <Marquee>
-        <div>TodoList 입니다. 근데 이제 Redux를 곁들인</div>
-        <div>여기에 마우스 올려보삼</div>
+        <div>항해99 리액트 숙련주차 과제.</div>
+        <div>마우스 올리면 멈춤</div>
       </Marquee>
     </HeaderBox>
   )

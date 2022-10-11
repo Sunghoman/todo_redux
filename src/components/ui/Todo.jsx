@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import ToggleBtn from "../button/toggle.styled";
+import SeeMore from "../button/seeMore.styled";
 
 import { useDispatch } from "react-redux";
-
 import { toggleTodo, deleteTodo } from "../../redux/modules/todos";
 
 import { useNavigate } from "react-router-dom";
-import SeeMore from "../button/seeMore.styled";
 
-const Todo = ({ todo, i }) => {
+
+const Todo = ({ todo }) => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -46,6 +46,7 @@ const TodoItem = styled.div`
   height: 15rem;
   margin: 0px 0px 50px 0px;
   transition: all 0.5s ease;
+  /* cursor: move; */
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select:none;
