@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 const List = () => {
 
   const todos = useSelector(state => state.reducer.todos);
-  console.log(todos)
+  // console.log(todos)
 
   const workingFilter = todos.filter((todo) => { return todo.isDone === false }).map((todo, i) => {
     return( 
@@ -26,6 +26,14 @@ const List = () => {
         className="done"
       />)
   })
+
+  // 로컬스토리지에 저장티비
+  todos.map((todo) => {
+    return localStorage.setItem(todo.id, JSON.stringify(todo))
+  })
+
+
+
 
   return(
     <div>
